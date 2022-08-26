@@ -25,7 +25,7 @@ class App{
     field = new Field();
     constructor(){
         this.log("game start")
-        this.drawVisible();
+        this.draw();
     }
     fromPosition(direction){
         return [this.position[0] + direction[0], this.position[1] + direction[1]]
@@ -36,21 +36,19 @@ class App{
         this.logElement.appendChild(entry);
     }
     buttonPressed(id){
-        this.log("Button Pressed " + id);
         this.score += 1;
         console.log(this.vectorAtDirection[id]);
         this.position = this.fromPosition(this.vectorAtDirection[id]);
-        console.log("New position " + this.position);
-        this.drawVisible();
+        this.draw();
     }
-    drawVisible(){
-        var text = '▲▲▲▲┌───┬───┬───┐▲▲▲▲\n▲▲▲▲│' 
+    draw(){
+        var text = '────┌───┬───┬───┐────\n────│' 
                    + this.field.get(this.fromPosition([0, 2]))
                    + '│'
                    + this.field.get(this.fromPosition([1, 2]))
                    + '│'
                    + this.field.get(this.fromPosition([2, 2]))
-                   + '│▲▲▲▲\n▲▲┌─┴─┬─┴─┬─┴─┬─┴─┐▲▲\n▲▲│'
+                   + '│────\n──┌─┴─┬─┴─┬─┴─┬─┴─┐──\n──│'
                    + this.field.get(this.fromPosition([-1, 1]))
                    + '│'
                    + this.field.get(this.fromPosition([0, 1]))
@@ -58,7 +56,7 @@ class App{
                    + this.field.get(this.fromPosition([1, 1]))
                    + '│'
                    + this.field.get(this.fromPosition([2, 1]))
-                   + '│▲▲\n┌─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐\n│'
+                   + '│──\n┌─┴─┬─┴─┬─┴─┬─┴─┬─┴─┐\n│'
                    + this.field.get(this.fromPosition([-2, 0]))
                    + '│'
                    + this.field.get(this.fromPosition([-1, 0]))
@@ -68,7 +66,7 @@ class App{
                    + this.field.get(this.fromPosition([1, 0]))
                    + '│'
                    + this.field.get(this.fromPosition([2, 0]))
-                   + '│\n└─┬─┴─┬─┴─┬─┴─┬─┴─┬─┘\n▲▲│'
+                   + '│\n└─┬─┴─┬─┴─┬─┴─┬─┴─┬─┘\n──│'
                    + this.field.get(this.fromPosition([-2, -1]))
                    + '│'
                    + this.field.get(this.fromPosition([-1, -1]))
@@ -76,14 +74,15 @@ class App{
                    + this.field.get(this.fromPosition([0, -1]))
                    + '│'
                    + this.field.get(this.fromPosition([1, -1]))
-                   + '│▲▲\n▲▲└─┬─┴─┬─┴─┬─┴─┬─┘▲▲\n▲▲▲▲│'
+                   + '│──\n──└─┬─┴─┬─┴─┬─┴─┬─┘──\n────│'
                    + this.field.get(this.fromPosition([-2, -2]))
                    + '│'
                    + this.field.get(this.fromPosition([-1, -2]))
                    + '│'
                    + this.field.get(this.fromPosition([0, -2]))
-                   + '│▲▲▲▲\n▲▲▲▲└───┴───┴───┘▲▲▲▲'
+                   + '│────\n────└───┴───┴───┘────'
         this.fieldElement.innerText = text;
+        this.scoreElement.innerText = this.score
 
     }
 }
