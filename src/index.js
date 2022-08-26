@@ -24,6 +24,7 @@ class App{
     position = [0, 0]
     field = new Field();
     constructor(){
+        this.log("game start")
         this.drawVisible();
     }
     fromPosition(direction){
