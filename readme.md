@@ -1,1 +1,1 @@
-"# chislo-sobiratel" 
+# chislo-sobiratel
