@@ -1,30 +1,36 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <style>
+            div {text-align: center; width: 50%}
+            body {text-align: left}
+        </style>
     </head>
     <body style="background-color:black;color:white">
-        <pre id="field" stype="font-family: monospace;">-1</pre>
-        <div id="panel">
-            <center>
-                <button onclick="app.buttonPressed('up-left')">&#x2196;</button>
-                <button onclick="app.buttonPressed('up-right')">&#x2197;</button>
-            </center>
-            <br>
-            <center>
-                <button onclick="app.buttonPressed('left')" align=left>&#x2190;</button>
-                <b id="score-counter">-1</b>
-                <button onclick="app.buttonPressed('right')" align=right>&#x2192;</button>
-            </center>
-            <br>
-            <center>
-                <button onclick="app.buttonPressed('down-left')">&#x2199;</button>
-                <button onclick="app.buttonPressed('down-right')">&#x2198;</button>
-            </center>
+        <div>
+            <div id="field" stype="font-family:'Courier New'">-1</div>
+            <div id="panel" align=left>
+                <div>
+                    <button onclick="app.buttonPressed('up-left')">&#x2196;</button>
+                    <button onclick="app.buttonPressed('up-right')">&#x2197;</button>
+                </div>
+                <br>
+                <div>
+                    <button onclick="app.buttonPressed('left')" align=left>&#x2190;</button>
+                    <b id="score-counter">-1</b>
+                    <button onclick="app.buttonPressed('right')" align=right>&#x2192;</button>
+                </div>
+                <br>
+                <div>
+                    <button onclick="app.buttonPressed('down-left')">&#x2199;</button>
+                    <button onclick="app.buttonPressed('down-right')">&#x2198;</button>
+                </div>
+            </div>
         </div>
-        <div align=right style="width: 20%;height: 20%;overflow: scroll">
+        <log align=right style="width: 20%;height: 20%;overflow: scroll">
             <ol id="log">
             </ol>
-        </div>
+        </log>
     </body>
     <script src="index.js"></script>
 </html>
